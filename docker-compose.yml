@@ -1,0 +1,32 @@
+version: '2'
+services:
+
+  postgres:
+    image: postgres:13-alpine
+    restart: always
+    ports:
+     - "5432"
+    volumes:
+     - postgres_data:/var/lib/postgresql/data
+
+  nginx:
+    build: ./nginx
+    restart: always
+    ports:
+     - "8080:80"
+
+  mongodb:
+    image: mongo:4.4
+    restart: always
+    ports:
+     - "27017"
+    volumes:
+     - mongodb_data:/data/db
+
+  roleman:
+    build: ./roleman
+    restart: no
+
+volumes:
+  postgres_data:
+  mongodb_data:
