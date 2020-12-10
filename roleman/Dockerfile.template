@@ -1,5 +1,5 @@
 FROM balenalib/raspberrypi4-64-alpine-openjdk:8
 
-COPY RoleMan-1.1.0-jar-with-dependencies.jar roleman.jar
+COPY RoleMan-jar-with-dependencies.jar roleman.jar
 
 CMD ["java", "-jar", "roleman.jar"]
