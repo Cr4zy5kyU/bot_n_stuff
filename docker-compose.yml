@@ -9,12 +9,6 @@ services:
     volumes:
      - postgres_data:/var/lib/postgresql/data
 
-  nginx:
-    build: ./nginx
-    restart: always
-    ports:
-     - "8080:80"
-
   mongodb:
     image: mongo:4.4
     restart: always
@@ -23,9 +17,15 @@ services:
     volumes:
      - mongodb_data:/data/db
 
+  nginx:
+    build: ./nginx
+    restart: always
+    ports:
+     - "8080:80"
+
   roleman:
     build: ./roleman
-    restart: no
+    restart: always
 
 volumes:
   postgres_data:
