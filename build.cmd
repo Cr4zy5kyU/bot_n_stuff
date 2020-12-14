@@ -1,1 +1,1 @@
-@balena push bots_n_stuff -mG --convert-eol
+@balena push bots_n_stuff -G --convert-eol
