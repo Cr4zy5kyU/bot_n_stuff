@@ -9,13 +9,13 @@ services:
     volumes:
      - postgres_data:/var/lib/postgresql/data
 
-  mongodb:
-    image: mongo:4.4
-    restart: always
-    ports:
-     - "27017"
-    volumes:
-     - mongodb_data:/data/db
+  # mongodb:
+  #   image: mongo:4.4
+  #   restart: always
+  #   ports:
+  #    - "27017"
+  #   volumes:
+  #    - mongodb_data:/data/db
 
   nginx:
     build: ./nginx
@@ -26,6 +26,12 @@ services:
   roleman:
     build: ./roleman
     restart: always
+
+  mysql:
+    image: hypriot/rpi-mysql:arm-5.5
+    restart: always
+    ports:
+      - "3306"
 
 volumes:
   postgres_data:
