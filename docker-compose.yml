@@ -32,7 +32,10 @@ services:
     restart: always
     ports:
       - "3306"
+    volumes:
+      - mysql_data:/var/lib/mysql
 
 volumes:
   postgres_data:
   mongodb_data:
+  mysql_data:
