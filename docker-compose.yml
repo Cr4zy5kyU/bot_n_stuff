@@ -27,8 +27,8 @@ services:
     build: ./roleman
     restart: always
 
-  mysql:
-    image: hypriot/rpi-mysql:arm-5.5
+  mariadb:
+    image: mariadb:10.5
     restart: always
     ports:
       - "3306"
