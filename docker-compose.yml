@@ -25,7 +25,11 @@ services:
 
   roleman:
     build: ./roleman
-    restart: always
+    restart: on-failure
+
+  minchiabbot:
+    build: ./minchiabbot
+    restart: on-failure
 
   mariadb:
     image: mariadb:10.5
