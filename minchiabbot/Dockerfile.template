@@ -1,5 +1,5 @@
 FROM balenalib/raspberrypi4-64-alpine-openjdk:8
 
-COPY Minchiabbot-jar-with-dependencies.jar minchiabbot.jar
+COPY Minchiabbot-deps.jar minchiabbot.jar
 
 CMD ["java", "-jar", "minchiabbot.jar"]
